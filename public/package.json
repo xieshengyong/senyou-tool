@@ -1,0 +1,17 @@
+{
+  "name": "senyou-tool",
+  "version": "0.0.3",
+  "description": "senyou-tool",
+  "main": "senyou-tool.umd.js",
+  "module": "senyou-tool.es.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "tool"
+  ],
+  "author": "senyou",
+  "license": "ISC"
+}
