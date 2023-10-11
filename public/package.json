@@ -1,6 +1,6 @@
 {
   "name": "senyou-tool",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "senyou-tool",
   "main": "senyou-tool.umd.js",
   "module": "senyou-tool.es.js",
