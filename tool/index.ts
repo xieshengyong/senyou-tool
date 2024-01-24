@@ -327,6 +327,8 @@ export const browser = {
       webApp: u.indexOf("Safari") === -1, // 是否web应该程序，没有头部与底部
       weixin: u.indexOf("MicroMessenger") > -1, // 是否微信 （2015-01-22新增）
       qq: u.indexOf("QQ/") > -1, // 是否QQ
+      /** 王者荣耀app */
+      TIEM: u.indexOf("TIEM Ingame Browser/") > -1, // 是否QQ
       yyb: u.match(/\/qqdownloader\/(\d+)(?:\/(appdetail|external|sdk))?/), // 是否应用宝 20230808
       isTV: u.match(/QQLiveBrowser\/(\d+)?/), // 是否腾讯视频 20230809
       iosVer: u.toLowerCase().match(/cpu iphone os (.*?) like mac os/),
