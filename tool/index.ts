@@ -300,19 +300,10 @@ export const TweenLoading = () => {
   };
 };
 
-/*
-判断访问终端和语言
-    使用：
-    if ( push.browser.versions.qq ) {
-        console.log('go go');
-    }
-    注意BUG：在微信内TD.browser.versions.qq也会返回true；
-    解决：在判断手Q之后加上微信判断；
-*/
+/** 判断访问终端和语言 */
 export const browser = {
   versions: (function () {
     var u: any = navigator.userAgent;
-    // var app = navigator.appVersion;
     return {
       trident: u.indexOf("Trident") > -1, // IE内核
       presto: u.indexOf("Presto") > -1, // opera内核
@@ -328,8 +319,12 @@ export const browser = {
       weixin: u.indexOf("MicroMessenger") > -1, // 是否微信 （2015-01-22新增）
       qq: u.indexOf("QQ/") > -1, // 是否QQ
       /** 王者荣耀app */
-      TIEM: u.indexOf("TIEM Ingame Browser/") > -1, // 是否QQ
+      TIEM: u.indexOf("TIEM Ingame Browser/") > -1, // 是否王者荣耀app 20240124
+      /** 王者营地app */
+      yingDi: u.indexOf("GameHelper") > -1 || u.indexOf("JsCommonApi") > -1, // 是否王者营地app 20240124
+      /** 应用宝 */
       yyb: u.match(/\/qqdownloader\/(\d+)(?:\/(appdetail|external|sdk))?/), // 是否应用宝 20230808
+      /** 腾讯视频 */
       isTV: u.match(/QQLiveBrowser\/(\d+)?/), // 是否腾讯视频 20230809
       iosVer: u.toLowerCase().match(/cpu iphone os (.*?) like mac os/),
       androidVer: u.toLowerCase().match(/android (.*?);/),
