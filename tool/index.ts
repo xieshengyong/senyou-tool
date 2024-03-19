@@ -326,6 +326,8 @@ export const browser = {
       yyb: u.match(/\/qqdownloader\/(\d+)(?:\/(appdetail|external|sdk))?/), // 是否应用宝 20230808
       /** 腾讯视频 */
       isTV: u.match(/QQLiveBrowser\/(\d+)?/), // 是否腾讯视频 20230809
+      /** LOL客户端浏览器 202402 */
+      lol: u.indexOf("LeagueOfLegendsClient") > -1,
       iosVer: u.toLowerCase().match(/cpu iphone os (.*?) like mac os/),
       androidVer: u.toLowerCase().match(/android (.*?);/),
     };
