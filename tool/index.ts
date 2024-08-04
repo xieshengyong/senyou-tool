@@ -3,12 +3,11 @@
  * @param {*}
  * @return {*}
  */
-function stSum(a: number, b: number) {
+export function stSum(a: number, b: number) {
   if (typeof a !== "number") return a;
   if (typeof b !== "number") return b;
   return a + b;
 }
-export { stSum };
 
 /**
  * 补位函数
@@ -19,7 +18,7 @@ export const pad = (num: number, n = 5): string => {
   return (Array(n).join("0") + num).slice(-n);
 };
 
-/** 获取m~n的随机数, 取整方向floor or ceil 默认floor */
+/** 获取m~n的随机整数, 取整方向floor or ceil 默认floor */
 export const getRandom = (m: number, n: number, isFloor = true): number => {
   return isFloor ? Math.floor(Math.random() * (n - m) + m) : Math.ceil(Math.random() * (n - m) + m);
 };
@@ -238,14 +237,14 @@ export function getCanvas(width: number, height: number): [HTMLCanvasElement, Ca
   return [canvas, ctx as CanvasRenderingContext2D];
 }
 
-export function getImg(src: string, anonymous = false): Promise<HTMLImageElement> {
+export function getImg(src: string, anonymous = false): Promise<HTMLImageElement | null> {
   return new Promise((resolve, reject) => {
     let img = new Image();
     anonymous && (img.crossOrigin = "Anonymous");
     img.onload = () => {
       resolve(img);
     };
-    img.onerror = () => reject;
+    img.onerror = () => resolve(null);
     img.src = src;
   });
 }
