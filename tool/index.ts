@@ -185,8 +185,9 @@ export function getCookie(name: string) {
 }
 
 export function setCookie(name: string, value: string, expiredays: number) {
-  var exdate = new Date();
-  document.cookie = name + "=" + value + ";expires=" + (expiredays === null ? exdate.setDate(exdate.getDate() + expiredays) : exdate.toUTCString());
+  var d = new Date(); //当前时间
+  d.setDate(d.getDate() + expiredays); //设置cookie过期时间
+  document.cookie = name + "=" + value + ";expires=" + d;
 }
 
 /** canvas 绘制文字，字间距 */
