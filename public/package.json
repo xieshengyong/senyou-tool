@@ -2,8 +2,9 @@
   "name": "senyou-tool",
   "version": "0.0.7",
   "description": "senyou-tool",
-  "main": "senyou-tool.umd.js",
-  "module": "senyou-tool.es.js",
+  "main": "senyou-tool.js",
+  "module": "senyou-tool.js",
+  "unpkg": "senyou-tool.min.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +14,10 @@
     "tool"
   ],
   "author": "senyou",
-  "license": "ISC"
+  "license": "ISC",
+  "files": [
+    "senyou-tool.js",
+    "senyou-tool.min.js",
+    "index.d.ts"
+  ]
 }
